@@ -13,139 +13,198 @@
     </script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pzw2bK3f7b1jK0e6qRk2zQKJYQf4t6h6z3mYhY9Ecqg2+FJw0oKXn5oZkq0cO6y1wQG7a9g1c2fWg7+2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <style>
       html { scroll-behavior: smooth; }
-      /* subtle gradient background */
-      body { background: radial-gradient(ellipse at top left, rgba(58,54,63,0.6), rgba(9,10,12,1)); }
+      body { background: radial-gradient(ellipse at top left, rgba(12,12,16,0.8), rgba(2,6,10,1)); }
+      /* card backdrop */
+      .card { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); backdrop-filter: blur(6px); }
     </style>
   </head>
   <body class="min-h-screen text-gray-200 antialiased">
 
-    <header class="max-w-5xl mx-auto px-6 py-8">
+    <header class="max-w-6xl mx-auto px-6 py-6">
       <nav class="flex items-center justify-between">
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 rounded-md bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">MM</div>
           <div>
-            <h1 class="text-xl font-semibold">Matome Mb</h1>
+            <h1 class="text-lg sm:text-xl font-semibold">Matome Mb</h1>
             <p class="text-sm text-indigo-300">AI Engineer • Full-Stack Developer</p>
           </div>
         </div>
-        <div class="hidden sm:flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-6">
           <a href="#projects" class="text-indigo-200 hover:text-white">Projects</a>
-          <a href="#capstone" class="text-indigo-200 hover:text-white">Academic</a>
+          <a href="#academic" class="text-indigo-200 hover:text-white">Academic</a>
           <a href="#skills" class="text-indigo-200 hover:text-white">Skills</a>
+          <a href="#contact" class="text-indigo-200 hover:text-white">Contact</a>
         </div>
+        <button id="themeToggle" class="md:hidden text-indigo-200"><i class="fas fa-moon"></i></button>
       </nav>
     </header>
 
     <!-- Hero -->
-    <section id="hero" class="max-w-5xl mx-auto px-6 py-12 flex flex-col-reverse lg:flex-row items-center gap-8">
+    <section id="hero" class="max-w-6xl mx-auto px-6 py-10 flex flex-col-reverse lg:flex-row items-center gap-8">
       <div class="flex-1" data-aos="fade-up">
-        <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight">Hi, I’m <span class="text-indigo-400">Matome Mb</span></h2>
-        <p class="mt-4 text-gray-300 max-w-xl">AI Engineer building RAG systems, production ML pipelines, and real-time embedded vision. I ship reliable deployed systems and love clean engineering.</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">Hi, I’m <span class="text-indigo-400">Matome Mb</span></h2>
+        <p class="mt-4 text-gray-300 max-w-xl">I build production-ready AI systems, RAG pipelines and embedded vision solutions. Dell Young Leader alum with experience taking ML projects from prototype to production.</p>
 
         <div class="mt-6 flex flex-wrap gap-3 items-center">
-          <a href="https://linkedin.com/" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-md transition"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
-          <a href="https://github.com/MatomeMb" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md transition"><i class="fab fa-github"></i><span class="sr-only">GitHub</span></a>
-          <a href="mailto:hello@matomemb.io" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition"><i class="fa fa-envelope"></i><span class="sr-only">Email</span></a>
+          <a href="https://www.linkedin.com/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-md transition"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+          <a href="https://github.com/MatomeMb" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md transition"><i class="fab fa-github"></i><span>GitHub</span></a>
+          <a href="mailto:hello@matomemb.io" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition"><i class="fa fa-envelope"></i><span>Email</span></a>
         </div>
 
         <div class="mt-6 space-y-1 text-sm text-gray-300">
-          <div><strong class="text-indigo-300">Phone:</strong> +27 67 260 3309</div>
+          <div><strong class="text-indigo-300">Phone:</strong> <strong class="text-white">+27 67 260 3309</strong></div>
           <div class="text-sm text-indigo-200">Available immediately • Cape Town</div>
         </div>
       </div>
 
       <div class="w-full sm:w-80 lg:w-96" data-aos="fade-up" data-aos-delay="100">
-        <div class="rounded-2xl p-6 bg-gradient-to-br from-white/4 to-white/2 border border-white/5 shadow-lg">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f" alt="Profile" class="w-full h-56 object-cover rounded-lg mb-4">
-          <div class="text-sm text-gray-300">AI, ML, and systems engineering focused on robustness and production-readiness. Experienced with FAISS, PyTorch, OpenAI, and embedded vision.</div>
+        <div class="rounded-2xl p-6 card border border-white/6 shadow-lg">
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Profile" class="w-full h-56 object-cover rounded-lg mb-4">
+          <div class="text-sm text-gray-300">AI, ML and systems engineer focused on production deployment, evaluation, and safety.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-10">
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+        <div class="md:col-span-2" data-aos="fade-up">
+          <h3 class="text-2xl font-bold">About Me</h3>
+          <p class="mt-4 text-gray-300">I'm an engineer who builds reliable AI systems and production pipelines. As a <strong class="text-indigo-300">Dell Young Leader</strong> I combine product thinking with rigorous ML engineering to deliver impact.</p>
+          <ul class="mt-4 text-sm text-gray-300 space-y-2">
+            <li>Production ML: model ops, RAG, vector search (FAISS), OpenAI/GPT integrations</li>
+            <li>Embedded & Edge: STM32, low-latency vision, real-time systems</li>
+            <li>Full-stack: APIs, streamlit prototypes, Spring Boot services</li>
+          </ul>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="120">
+          <div class="p-4 rounded-lg card border border-white/6">
+            <h4 class="font-semibold">Quick Stats</h4>
+            <p class="mt-2 text-sm text-gray-300"><strong class="text-indigo-300">Available:</strong> Immediately</p>
+            <p class="mt-1 text-sm text-gray-300"><strong class="text-indigo-300">Location:</strong> Cape Town</p>
+            <p class="mt-1 text-sm text-gray-300"><strong class="text-indigo-300">Contact:</strong> +27 67 260 3309</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Production Projects -->
-    <section id="projects" class="max-w-5xl mx-auto px-6 py-12">
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-10">
       <h3 class="text-2xl font-bold mb-6" data-aos="fade-up">Production Projects</h3>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="p-6 rounded-xl bg-white/5 border border-white/5 hover:scale-105 transform transition" data-aos="fade-up">
+        <article class="p-6 rounded-xl card border border-white/6 hover:scale-105 transform transition" data-aos="fade-up">
           <h4 class="font-semibold text-lg">PDF Autofill MVP</h4>
-          <p class="mt-2 text-sm text-gray-300">Automated PDF form filling for South African government forms.</p>
-          <p class="mt-4 text-indigo-300 font-bold">Result: <span class="text-white">100% accuracy</span> on tested forms</p>
+          <p class="mt-2 text-sm text-gray-300">Automated, validated PDF form filling for South African government forms with end-to-end tests and monitoring.</p>
+          <p class="mt-4 text-indigo-300 font-bold">Result: <strong class="text-white">100% accuracy</strong> on validated form set</p>
         </article>
 
-        <article class="p-6 rounded-xl bg-white/5 border border-white/5 hover:scale-105 transform transition" data-aos="fade-up" data-aos-delay="80">
-          <h4 class="font-semibold text-lg">Beetroot AI Networker</h4>
-          <p class="mt-2 text-sm text-gray-300">RAG agent using FAISS vector DB, GPT-4o, and Streamlit for fast experimentation and demos.</p>
-          <p class="mt-4 text-indigo-300 font-bold">Tech: FAISS • GPT-4o • Streamlit</p>
+        <article class="p-6 rounded-xl card border border-white/6 hover:scale-105 transform transition" data-aos="fade-up" data-aos-delay="80">
+          <h4 class="font-semibold text-lg">Beetroot AI Networker (RAG)</h4>
+          <p class="mt-2 text-sm text-gray-300">Retrieval-Augmented Generation stack with FAISS vector DB, GPT-4o integrations and Streamlit demos for rapid validation.</p>
+          <p class="mt-4 text-indigo-300 font-bold">Tech: <strong class="text-white">FAISS • GPT-4o • Streamlit</strong></p>
         </article>
 
-        <article class="p-6 rounded-xl bg-white/5 border border-white/5 hover:scale-105 transform transition" data-aos="fade-up" data-aos-delay="160">
+        <article class="p-6 rounded-xl card border border-white/6 hover:scale-105 transform transition" data-aos="fade-up" data-aos-delay="160">
           <h4 class="font-semibold text-lg">RoadMind AI Smart Helmet</h4>
-          <p class="mt-2 text-sm text-gray-300">Real-time hazard detection on embedded hardware with low-latency alerts to improve rider safety.</p>
-          <p class="mt-4 text-indigo-300 font-bold">Impact: Real-time detection & reduced hazard response time</p>
+          <p class="mt-2 text-sm text-gray-300">Real-time hazard detection on embedded hardware with low-latency alerts and field trials.</p>
+          <p class="mt-4 text-indigo-300 font-bold">Impact: Real-time detection and reduced rider response time</p>
         </article>
       </div>
     </section>
 
-    <!-- Academic/Capstone Projects -->
-    <section id="capstone" class="max-w-5xl mx-auto px-6 py-12">
+    <!-- Academic Projects -->
+    <section id="academic" class="max-w-6xl mx-auto px-6 py-10">
       <h3 class="text-2xl font-bold mb-6" data-aos="fade-up">Academic & Capstone Projects</h3>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="p-4 rounded-lg bg-white/4 border border-white/6" data-aos="fade-up">
-          <h5 class="font-semibold">FashionMNIST Classifier</h5>
-          <p class="text-sm mt-1 text-gray-300">Convolutional network achieving <strong class="text-indigo-300">89.33%</strong> test accuracy on FashionMNIST.</p>
+        <div class="p-4 rounded-lg card border border-white/6" data-aos="fade-up">
+          <h5 class="font-semibold">Image Processing Pipeline</h5>
+          <p class="text-sm mt-1 text-gray-300">Optimized image pipeline delivering <strong class="text-indigo-300">40% throughput gain</strong> on benchmark datasets.</p>
         </div>
 
-        <div class="p-4 rounded-lg bg-white/4 border border-white/6" data-aos="fade-up" data-aos-delay="60">
-          <h5 class="font-semibold">Q-Learning Agent</h5>
-          <p class="text-sm mt-1 text-gray-300">Reinforcement learning agent trained to optimize decision policies in simulated environments.</p>
+        <div class="p-4 rounded-lg card border border-white/6" data-aos="fade-up" data-aos-delay="60">
+          <h5 class="font-semibold">Machine Learning (FashionMNIST)</h5>
+          <p class="text-sm mt-1 text-gray-300">ConvNet achieving <strong class="text-indigo-300">89.33%</strong> test accuracy on FashionMNIST.</p>
         </div>
 
-        <div class="p-4 rounded-lg bg-white/4 border border-white/6" data-aos="fade-up" data-aos-delay="120">
-          <h5 class="font-semibold">CPU Scheduling Optimization</h5>
-          <p class="text-sm mt-1 text-gray-300">Scheduler improvements producing a <strong class="text-indigo-300">~35%</strong> throughput gain in benchmarks.</p>
+        <div class="p-4 rounded-lg card border border-white/6" data-aos="fade-up" data-aos-delay="120">
+          <h5 class="font-semibold">Systems / Scheduling Research</h5>
+          <p class="text-sm mt-1 text-gray-300">Scheduling improvements showing <strong class="text-indigo-300">~35% improvement</strong> in throughput.</p>
         </div>
 
-        <div class="p-4 rounded-lg bg-white/4 border border-white/6" data-aos="fade-up" data-aos-delay="180">
-          <h5 class="font-semibold">MyAdvisor Web App</h5>
-          <p class="text-sm mt-1 text-gray-300">Full-stack advising platform with authentication, role-based views, and analytics.</p>
+        <div class="p-4 rounded-lg card border border-white/6" data-aos="fade-up" data-aos-delay="180">
+          <h5 class="font-semibold">MyAdvisor (Full-Stack)</h5>
+          <p class="text-sm mt-1 text-gray-300">Advising web app with auth and analytics supporting <strong class="text-indigo-300">800+ users</strong> in trials.</p>
         </div>
 
-        <div class="p-4 rounded-lg bg-white/4 border border-white/6" data-aos="fade-up" data-aos-delay="240">
-          <h5 class="font-semibold">STM32 Embedded Project</h5>
-          <p class="text-sm mt-1 text-gray-300">Embedded vision prototype using STM32 for low-power, real-time signal processing.</p>
+        <div class="p-4 rounded-lg card border border-white/6" data-aos="fade-up" data-aos-delay="240">
+          <h5 class="font-semibold">STM32 Embedded Prototype</h5>
+          <p class="text-sm mt-1 text-gray-300">Robust embedded pipeline with <strong class="text-indigo-300">100% integrity</strong> checks in hardware-in-loop tests.</p>
         </div>
       </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="max-w-5xl mx-auto px-6 py-12">
+    <section id="skills" class="max-w-6xl mx-auto px-6 py-10">
       <h3 class="text-2xl font-bold mb-6" data-aos="fade-up">Skills</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" data-aos="fade-up">
-        <span class="px-3 py-2 bg-white/3 rounded-md">Python</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">PyTorch</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">OpenAI</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">FAISS</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">Computer Vision</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">C / C++</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">STM32</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">Spring Boot</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">Docker</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">Git</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">SQL</span>
-        <span class="px-3 py-2 bg-white/3 rounded-md">REST APIs</span>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3" data-aos="fade-up">
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">Python</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">PyTorch</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">OpenAI</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">FAISS</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">Computer Vision</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">C / C++</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">STM32</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">Spring Boot</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">Docker</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">Git</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">SQL</span>
+        <span class="px-3 py-2 bg-white/4 rounded-md text-sm">REST APIs</span>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-10">
+      <h3 class="text-2xl font-bold mb-6" data-aos="fade-up">Contact</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div data-aos="fade-up">
+          <p class="text-gray-300">Prefer email? Use the form — it posts to Formspree. Replace the action URL with your Formspree endpoint.</p>
+          <div class="mt-4 p-6 rounded-lg card border border-white/6">
+            <p class="text-sm text-gray-300">Email: <strong class="text-white">hello@matomemb.io</strong></p>
+            <p class="text-sm text-gray-300 mt-2">Phone: <strong class="text-white">+27 67 260 3309</strong></p>
+          </div>
+        </div>
+
+        <form data-aos="fade-up" action="https://formspree.io/f/yourFormId" method="POST" class="space-y-4">
+          <div>
+            <label class="block text-sm text-gray-300">Name</label>
+            <input name="name" required class="w-full mt-1 px-3 py-2 rounded-md bg-white/3 border border-white/6 text-white focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-300">Email</label>
+            <input name="email" type="email" required class="w-full mt-1 px-3 py-2 rounded-md bg-white/3 border border-white/6 text-white focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-300">Message</label>
+            <textarea name="message" rows="4" required class="w-full mt-1 px-3 py-2 rounded-md bg-white/3 border border-white/6 text-white focus:outline-none"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="px-5 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-md">Send Message</button>
+          </div>
+        </form>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="mt-12 border-t border-white/6 py-8">
-      <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="text-sm text-gray-300">Available immediately • Cape Town • <strong class="text-white">+27 67 260 3309</strong></div>
         <div class="text-sm text-gray-400">© <span id="year"></span> Matome Mb</div>
       </div>
@@ -156,6 +215,12 @@
     <script>
       AOS.init({ once: true, duration: 700 });
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // simple theme toggle (persist in localStorage)
+      const toggle = document.getElementById('themeToggle');
+      toggle?.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+      });
     </script>
   </body>
 </html>
