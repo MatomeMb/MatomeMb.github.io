@@ -419,10 +419,12 @@
                     <!-- EY Experience Gallery -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
-                            <img src="EY-gallery-photo.jpeg" alt="EY Consulting Programme - Gallery Photo" class="w-full h-64 object-cover">
+                            <img src="./EY-gallery-photo.jpeg" alt="EY Consulting Programme - Gallery Photo" class="w-full h-64 object-cover" loading="lazy" data-filename="EY-gallery-photo.jpeg">
+                            <div class="mt-2 text-sm text-indigo-300 hidden img-link"><a href="./EY-gallery-photo.jpeg" target="_blank" rel="noopener">Open image in new tab</a></div>
                         </div>
                         <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
-                            <img src="EY-group-photo.jpeg" alt="EY Consulting Programme - Group Photo" class="w-full h-64 object-cover">
+                            <img src="./EY-group-photo.jpeg" alt="EY Consulting Programme - Group Photo" class="w-full h-64 object-cover" loading="lazy" data-filename="EY-group-photo.jpeg">
+                            <div class="mt-2 text-sm text-indigo-300 hidden img-link"><a href="./EY-group-photo.jpeg" target="_blank" rel="noopener">Open image in new tab</a></div>
                         </div>
                     </div>
                 </div>
@@ -790,6 +792,26 @@
                 }
                 // hide after 6s
                 setTimeout(()=>{ if(alertBox) alertBox.classList.add('hidden') }, 6000);
+            });
+        })();
+
+        // Image load fallback: if an image fails to load, show a link so users can open it directly
+        (function imageFallbacks(){
+            document.querySelectorAll('img[data-filename]').forEach(img => {
+                // ensure images display fully
+                img.style.display = 'block';
+                img.addEventListener('error', () => {
+                    const containerLink = img.parentElement.querySelector('.img-link');
+                    if (containerLink) containerLink.classList.remove('hidden');
+                    img.classList.add('opacity-60');
+                    img.alt = img.alt + ' (image failed to load)';
+                });
+                // if already failed to load (cached), check naturalWidth
+                if (img.complete && img.naturalWidth === 0) {
+                    const containerLink = img.parentElement.querySelector('.img-link');
+                    if (containerLink) containerLink.classList.remove('hidden');
+                    img.classList.add('opacity-60');
+                }
             });
         })();
     </script>
