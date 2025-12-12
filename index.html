@@ -460,7 +460,8 @@
             <p class="text-center text-lg text-slate-300 mb-12">
                 Have an opportunity, question, or just want to chat about AI, embedded systems, or tech in Africa? I'd love to hear from you.
             </p>
-            <form action="https://formspree.io/f/yourFormId" method="POST" class="space-y-6">
+            <form action="https://formspree.io/f/yourFormId" method="POST" class="space-y-6" id="contact-form">
+                <div id="form-alert" class="hidden p-4 rounded-md text-sm"></div>
                 <div>
                     <input 
                         type="text" 
@@ -556,20 +557,51 @@
             });
         });
 
-        // Form submission feedback
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function() {
-                const button = this.querySelector('button[type="submit"]');
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
-                button.disabled = true;
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                }, 3000);
+        // Form submission via AJAX (keeps placeholder Formspree ID)
+        (function(){
+            const form = document.getElementById('contact-form');
+            const alertBox = document.getElementById('form-alert');
+            if (!form) return;
+
+            form.addEventListener('submit', async function(e){
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+
+                try {
+                    const resp = await fetch(form.action, {
+                        method: form.method || 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (resp.ok) {
+                        alertBox.className = 'p-4 rounded-md text-sm bg-green-900/60 text-green-200';
+                        alertBox.innerText = 'Thanks — your message has been sent. I will reply shortly.';
+                        alertBox.classList.remove('hidden');
+                        form.reset();
+                        submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                    } else {
+                        const data = await resp.json().catch(()=>({}));
+                        alertBox.className = 'p-4 rounded-md text-sm bg-red-900/60 text-red-200';
+                        alertBox.innerText = data.error || 'There was an error sending your message. Please try again later.';
+                        alertBox.classList.remove('hidden');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                } catch (err) {
+                    alertBox.className = 'p-4 rounded-md text-sm bg-red-900/60 text-red-200';
+                    alertBox.innerText = 'Network error. Please check your connection and try again.';
+                    alertBox.classList.remove('hidden');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+                // hide after 6s
+                setTimeout(()=>{ if(alertBox) alertBox.classList.add('hidden') }, 6000);
             });
-        }
+        })();
     </script>
 </body>
 </html>
