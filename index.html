@@ -30,7 +30,7 @@
             --text-light: #e2e8f0;
             --text-lighter: #cbd5e1;
             --bg-dark: #0f172a;
-            --bg-card: #1e293b;
+            --bg-card: rgba(30, 41, 59, 0.4);
             --bg-accent: #334155;
         }
 
@@ -71,6 +71,23 @@
         @keyframes float {
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(30px, -30px); }
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .card-hover {
@@ -155,6 +172,18 @@
             padding-left: 1rem;
         }
 
+        .nda-badge {
+            background: rgba(239, 68, 68, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
         @media (max-width: 768px) {
             .gradient-bg::before {
                 top: -100%;
@@ -166,7 +195,7 @@
 <body class="antialiased">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
+    <nav class="sticky top-0 z-50 glass-card m-4 rounded-2xl" style="background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);">
         <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">MM</a>
             <div class="hidden md:flex gap-8">
@@ -228,8 +257,8 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6" data-aos="fade-right" data-aos-delay="100">
-                <div class="stat-highlight py-4 rounded-lg">
-                    <p class="text-lg leading-relaxed">
+                <div class="glass-card py-4 rounded-lg">
+                    <p class="text-lg leading-relaxed px-6">
                         As a recent graduate from the <span class="font-bold text-indigo-300">University of Cape Town</span> with a <span class="font-bold">BSc in Computer Science and Computer Engineering</span> (December 2025), I specialize in building production-ready systems that solve real-world problems.
                     </p>
                 </div>
@@ -259,12 +288,12 @@
     </section>
 
     <!-- Production Projects -->
-    <section class="py-24 px-4 md:px-6 max-w-6xl mx-auto bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-3xl my-12" id="projects">
+    <section class="py-24 px-4 md:px-6 max-w-6xl mx-auto" id="projects">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 section-title" data-aos="fade-up">
             Production Projects
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-slate-800/80 backdrop-blur rounded-2xl p-8 card-hover" data-aos="fade-up">
+            <div class="glass-card card-hover p-8" data-aos="fade-up">
                 <div class="mb-4 w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-lg flex items-center justify-center">
                     <i class="fas fa-file-pdf text-white text-xl"></i>
                 </div>
@@ -272,15 +301,13 @@
                 <p class="mb-4 text-slate-300">
                     OCR + LLM system achieving <span class="font-bold text-green-400">100% field-mapping accuracy</span> on South African government forms (PRASA RFQ, SBDs).
                 </p>
-                <div class="mb-4 p-3 bg-slate-700/50 rounded-lg">
+                <div class="mb-4 p-3 bg-white/5 rounded-lg">
                     <p class="text-sm text-slate-400"><span class="font-semibold text-slate-300">Tech:</span> Python, OpenAI GPT-4, PyMuPDF, Tesseract</p>
                 </div>
-                <a href="https://github.com/MatomeMb/pdf-autofill-mvp" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold transition">
-                    View Repository <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <span class="nda-badge"><i class="fas fa-lock mr-2"></i>Confidential Project (NDA)</span>
             </div>
 
-            <div class="bg-slate-800/80 backdrop-blur rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card card-hover p-8" data-aos="fade-up" data-aos-delay="100">
                 <div class="mb-4 w-12 h-12 bg-gradient-to-br from-green-400 to-teal-400 rounded-lg flex items-center justify-center">
                     <i class="fas fa-network-wired text-white text-xl"></i>
                 </div>
@@ -288,15 +315,13 @@
                 <p class="mb-4 text-slate-300">
                     RAG-powered agent connecting African entrepreneurs using <span class="font-bold">FAISS</span> and <span class="font-bold">GPT-4o</span> for intelligent business matching.
                 </p>
-                <div class="mb-4 p-3 bg-slate-700/50 rounded-lg">
+                <div class="mb-4 p-3 bg-white/5 rounded-lg">
                     <p class="text-sm text-slate-400"><span class="font-semibold text-slate-300">Tech:</span> Python, FAISS, sentence-transformers, Streamlit</p>
                 </div>
-                <a href="https://github.com/MatomeMb/beetroot-ai-networker" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold transition">
-                    View Repository <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <span class="nda-badge"><i class="fas fa-lock mr-2"></i>Confidential Project (NDA)</span>
             </div>
 
-            <div class="bg-slate-800/80 backdrop-blur rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card card-hover p-8" data-aos="fade-up" data-aos-delay="200">
                 <div class="mb-4 w-12 h-12 bg-gradient-to-br from-orange-400 to-red-400 rounded-lg flex items-center justify-center">
                     <i class="fas fa-helmet-safety text-white text-xl"></i>
                 </div>
@@ -304,12 +329,10 @@
                 <p class="mb-4 text-slate-300">
                     Real-time hazard detection with <span class="font-bold">LIDAR</span>, <span class="font-bold">IMU</span>, and multi-sensor fusion for autonomous vehicles.
                 </p>
-                <div class="mb-4 p-3 bg-slate-700/50 rounded-lg">
+                <div class="mb-4 p-3 bg-white/5 rounded-lg">
                     <p class="text-sm text-slate-400"><span class="font-semibold text-slate-300">Tech:</span> Python, PyTorch, Embedded C, ROS</p>
                 </div>
-                <a href="https://github.com/MatomeMb/roadmind-ai" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-semibold transition">
-                    View Repository <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <span class="nda-badge"><i class="fas fa-lock mr-2"></i>Confidential Project (NDA)</span>
             </div>
         </div>
     </section>
@@ -320,7 +343,13 @@
             Academic & Capstone Projects
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-slate-800/80 rounded-2xl p-8 card-hover" data-aos="fade-up">
+    <!-- Academic Projects -->
+    <section class="py-24 px-4 md:px-6 max-w-6xl mx-auto" id="academic">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 section-title" data-aos="fade-up">
+            Academic & Capstone Projects
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass-card rounded-2xl p-8 card-hover" data-aos="fade-up">
                 <h3 class="text-2xl font-bold mb-4 flex items-center">
                     <i class="fas fa-image text-cyan-400 mr-3 text-xl"></i>Image Processing
                 </h3>
@@ -329,7 +358,7 @@
                 </p>
             </div>
 
-            <div class="bg-slate-800/80 rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="text-2xl font-bold mb-4 flex items-center">
                     <i class="fas fa-brain text-purple-400 mr-3 text-xl"></i>Machine Learning
                 </h3>
@@ -338,7 +367,7 @@
                 </p>
             </div>
 
-            <div class="bg-slate-800/80 rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="text-2xl font-bold mb-4 flex items-center">
                     <i class="fas fa-server text-blue-400 mr-3 text-xl"></i>Systems & Networking
                 </h3>
@@ -347,7 +376,7 @@
                 </p>
             </div>
 
-            <div class="bg-slate-800/80 rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+            <div class="glass-card rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="text-2xl font-bold mb-4 flex items-center">
                     <i class="fas fa-code text-green-400 mr-3 text-xl"></i>Full-Stack Engineering
                 </h3>
@@ -356,7 +385,7 @@
                 </p>
             </div>
 
-            <div class="bg-slate-800/80 rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="400">
+            <div class="glass-card rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="400">
                 <h3 class="text-2xl font-bold mb-4 flex items-center">
                     <i class="fas fa-microchip text-orange-400 mr-3 text-xl"></i>Embedded Systems
                 </h3>
@@ -365,7 +394,7 @@
                 </p>
             </div>
 
-            <div class="bg-slate-800/80 rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="500">
+            <div class="glass-card rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="500">
                 <h3 class="text-2xl font-bold mb-4 flex items-center">
                     <i class="fas fa-graduation-cap text-indigo-400 mr-3 text-xl"></i>Capstone & Research
                 </h3>
@@ -375,9 +404,9 @@
             </div>
         </div>
     </section>
-
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4" data-aos="fade-up" data-aos-delay="100">
     <!-- Skills Section -->
-    <section class="py-24 px-4 md:px-6 max-w-6xl mx-auto bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-3xl my-12" id="skills">
+    <section class="py-24 px-4 md:px-6 max-w-6xl mx-auto" id="skills">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 section-title" data-aos="fade-up">
             Technical Skills
         </h2>
@@ -399,12 +428,6 @@
             <span class="skill-badge px-5 py-3 rounded-full text-sm md:text-base font-semibold">Agile Methodology</span>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section class="py-24 px-4 md:px-6 max-w-6xl mx-auto" id="contact">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 section-title" data-aos="fade-up">
-            Get in Touch
-        </h2>
         <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             <p class="text-center text-lg text-slate-300 mb-12">
                 Have an opportunity, question, or just want to chat about AI, embedded systems, or tech in Africa? I'd love to hear from you.
