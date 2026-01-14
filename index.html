@@ -14,6 +14,7 @@
     <meta property="og:description" content="AI/ML Engineer specializing in Computer Vision, OCR automation, and RAG systems.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="profile.jpg">
+    <meta property="og:image:alt" content="Portrait of Matome Mbowene">
     <meta property="og:url" content="https://matomemb.github.io/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0a192f">
@@ -92,6 +93,16 @@
             -webkit-text-fill-color: transparent;
         }
         
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid rgba(100,255,218,0.25);
+            color: var(--text);
+            padding: 0.5rem 0.75rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
         /* Hero - Fast loading */
         .hero {
             min-height: 100vh;
@@ -243,6 +254,25 @@
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .hero { padding: 5rem 1rem 1rem; }
+
+            .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+            nav { padding: 1rem 1rem; }
+
+            .nav-links {
+                display: none !important;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                padding: 1rem;
+                gap: 0.75rem !important;
+                border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            }
+
+            nav.nav-open .nav-links { display: flex !important; }
         }
     </style>
 </head>
@@ -251,12 +281,14 @@
     <!-- Minimal Navigation -->
     <nav>
         <div class="logo">MM</div>
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
         <div class="nav-links" style="display: flex; gap: 1.5rem;">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -480,8 +512,9 @@
                         </div>
                         <ul class="list">
                             <li><strong style="color: var(--text);">Outcome:</strong> 100% field-mapping accuracy with multi-layer validation.</li>
-                            <li><strong style="color: var(--text);">Engineering:</strong> confidence scoring, fallbacks, and audit logging.</li>
-                            <li><strong style="color: var(--text);">Delivery:</strong> editable PDF form fields (AcroFields).</li>
+                            <li><strong style="color: var(--text);">Approach:</strong> OCR + LLM mapping with confidence scoring and explainable debug outputs.</li>
+                            <li><strong style="color: var(--text);">Reliability:</strong> validation layers, fallbacks, and audit logging.</li>
+                            <li><strong style="color: var(--text);">Stack:</strong> Python, OpenCV, OCR, PDF forms, LLM APIs.</li>
                         </ul>
                         <details>
                             <summary class="details-summary">Case study details</summary>
@@ -505,8 +538,10 @@
                             <span class="tag">Streamlit</span>
                         </div>
                         <ul class="list">
-                            <li><strong style="color: var(--text);">Pipeline:</strong> ingestion → embeddings → persistent index → retrieval → generation.</li>
-                            <li><strong style="color: var(--text);">Ops:</strong> improved CI/CD, dependency management, and safeguards.</li>
+                            <li><strong style="color: var(--text);">Outcome:</strong> fast, relevant retrieval-backed answers for a focused knowledge base.</li>
+                            <li><strong style="color: var(--text);">Approach:</strong> ingestion → embeddings → persistent index → retrieval → generation.</li>
+                            <li><strong style="color: var(--text);">Reliability:</strong> deterministic indexing, persistence, and guardrails when retrieval is weak.</li>
+                            <li><strong style="color: var(--text);">Stack:</strong> Python, FAISS, sentence-transformers, Streamlit, LLM APIs.</li>
                         </ul>
                         <details>
                             <summary class="details-summary">Case study details</summary>
@@ -530,8 +565,10 @@
                             <span class="tag">Sensor Fusion</span>
                         </div>
                         <ul class="list">
-                            <li><strong style="color: var(--text);">Focus:</strong> real-time pipelines and reliability under constraints.</li>
-                            <li><strong style="color: var(--text);">Hardware:</strong> LiDAR, IMU, and camera integration.</li>
+                            <li><strong style="color: var(--text);">Outcome:</strong> foundations for real-time hazard detection under latency and power constraints.</li>
+                            <li><strong style="color: var(--text);">Approach:</strong> sensor fusion pipeline design and edge-AI model integration.</li>
+                            <li><strong style="color: var(--text);">Reliability:</strong> timing integrity, robust data handling, and fault-tolerant interfaces.</li>
+                            <li><strong style="color: var(--text);">Stack:</strong> C/C++, STM32, LiDAR/IMU/camera integration.</li>
                         </ul>
                         <details>
                             <summary class="details-summary">Case study details</summary>
@@ -556,8 +593,41 @@
                             <span class="tag">CI/CD</span>
                         </div>
                         <ul class="list">
-                            <li><strong style="color: var(--text);">Focus:</strong> engineering foundations, production readiness, and delivery cadence.</li>
-                            <li><strong style="color: var(--text);">Note:</strong> scope and artifacts can be discussed at a high level in interviews.</li>
+                            <li><strong style="color: var(--text);">Outcome:</strong> production-ready AI product foundations and measurable delivery cadence.</li>
+                            <li><strong style="color: var(--text);">Approach:</strong> system design, backend integration, and safe LLM usage patterns.</li>
+                            <li><strong style="color: var(--text);">Reliability:</strong> environment hardening, CI/CD safeguards, and operational readiness.</li>
+                            <li><strong style="color: var(--text);">Stack:</strong> LLM APIs, backend services, CI/CD.</li>
+                            <li><strong style="color: var(--text);">Note:</strong> details limited by NDA; happy to discuss at a high level.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" style="padding: 4rem 2rem;">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+                    <div class="card">
+                        <h3 style="color: var(--text); margin-bottom: 0.5rem;">Google Cloud Skill Badges</h3>
+                        <p class="muted" style="line-height: 1.7; margin-bottom: 1rem;">
+                            Verified cloud learning and hands-on labs focused on practical, production-relevant skills.
+                        </p>
+                        <ul class="list">
+                            <li><strong style="color: var(--text);">Multimodal RAG (Gemini)</strong> — view on <a href="https://www.credly.com/users/matome-mbowene" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">Credly</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="color: var(--text); margin-bottom: 0.5rem;">Programs</h3>
+                        <p class="muted" style="line-height: 1.7; margin-bottom: 1rem;">
+                            Selected programs that strengthened leadership, communication, and technical execution.
+                        </p>
+                        <ul class="list">
+                            <li>Dell Young Leaders Scholar</li>
+                            <li>Google Cloud Career Launchpad (EMEA)</li>
                         </ul>
                     </div>
                 </div>
@@ -634,6 +704,32 @@
         // Show content immediately
         document.body.classList.remove('loading');
         document.body.classList.add('loaded');
+
+        // Accessible mobile navigation
+        (function () {
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (!nav || !toggle || !navLinks) return;
+
+            function setOpen(isOpen) {
+                nav.classList.toggle('nav-open', isOpen);
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.contains('nav-open');
+                setOpen(!isOpen);
+            });
+
+            navLinks.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', () => setOpen(false));
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') setOpen(false);
+            });
+        })();
         
         // Simple form submission
         function submitForm(event) {
@@ -671,70 +767,6 @@
                 }
             });
         });
-        
-        // Simple counter animation
-        function animateCounter(element, target, decimals) {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target.toFixed(decimals) + (element.dataset.suffix || '');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = current.toFixed(decimals) + (element.dataset.suffix || '');
-                }
-            }, 30);
-        }
-        
-        // Start counters when in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    document.querySelectorAll('.hero-content [style*="font-size: 1.8rem"]').forEach(el => {
-                        const text = el.textContent;
-                        const target = parseFloat(text);
-                        const suffix = text.replace(String(target), '');
-                        el.dataset.suffix = suffix;
-                        const decimals = (String(target).split('.')[1] || '').length;
-                        if (!isNaN(target)) {
-                            animateCounter(el, target, decimals);
-                        }
-                    });
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(document.querySelector('.hero'));
-        
-        // Mobile menu toggle (simple)
-        if (window.innerWidth < 768) {
-            const nav = document.querySelector('nav');
-            const navLinks = nav.querySelector('.nav-links');
-            const toggleBtn = document.createElement('button');
-            toggleBtn.innerHTML = '☰';
-            toggleBtn.style.background = 'none';
-            toggleBtn.style.border = 'none';
-            toggleBtn.style.color = 'var(--text-muted)';
-            toggleBtn.style.fontSize = '1.5rem';
-            toggleBtn.style.cursor = 'pointer';
-            toggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
-            
-            toggleBtn.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            });
-            
-            nav.appendChild(toggleBtn);
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'var(--primary)';
-            navLinks.style.padding = '1rem';
-            navLinks.style.display = 'none';
-        }
     </script>
 
     <!-- Structured data (basic Person profile) -->
