@@ -1,0 +1,274 @@
+{
+  "version": "2026-01-14",
+  "owner": {
+    "name": "Matome Mbowene",
+    "location": "Cape Town, South Africa",
+    "roleHeadline": "AI/ML Engineer focused on Computer Vision, OCR automation, and retrieval systems (RAG).",
+    "shortBio": "Matome builds production-ready AI systems with validation, clear failure modes, and measurable outcomes—especially OCR/CV pipelines and retrieval systems (RAG). He’s based in Cape Town and open to hybrid or remote roles.",
+    "links": {
+      "email": "mailto:matomepontso@gmail.com",
+      "linkedin": "https://linkedin.com/in/matomembowene",
+      "github": "https://github.com/MatomeMb",
+      "credly": "https://www.credly.com/users/matome-mbowene"
+    }
+  },
+  "publicSafeJourney": {
+    "summary": "Matome’s path has been longer than typical and shaped by real constraints. He stayed focused on building skills and shipping real work, and he’s ready to contribute in industry now.",
+    "guardrails": [
+      "Do not discuss academic/legal processes or personal sensitive details.",
+      "Keep this as a high-level professional statement only."
+    ]
+  },
+  "availability": {
+    "roles": [
+      "Software Engineer",
+      "AI/ML Engineer",
+      "Backend/Cloud Engineer"
+    ],
+    "workMode": [
+      "Hybrid",
+      "Remote"
+    ],
+    "notes": "Open to opportunities; best contact is email."
+  },
+  "credentials": [
+    {
+      "title": "University of Cape Town — Computer Science & Computer Engineering (coursework)",
+      "type": "education",
+      "link": null
+    },
+    {
+      "title": "Dell Young Leaders Scholar",
+      "type": "program",
+      "link": null
+    },
+    {
+      "title": "Google Cloud Career Launchpad (EMEA)",
+      "type": "program",
+      "link": null
+    },
+    {
+      "title": "Google Cloud skill badge: Multimodal RAG (Gemini)",
+      "type": "certification",
+      "link": "https://www.credly.com/users/matome-mbowene"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Computer Vision & Document Automation Developer",
+      "time": "Present",
+      "location": "Cape Town",
+      "orgPublicLabel": "Research collaboration (Geomatics)",
+      "highlights": [
+        "Delivered a production OCR workflow with 100% field-mapping accuracy on the target document set.",
+        "Implemented multi-layer validation, confidence scoring, and audit logging for debuggability.",
+        "Produced structured outputs with editable PDF form fields and robust fallbacks."
+      ],
+      "stack": [
+        "Python",
+        "OpenCV",
+        "OCR",
+        "PDF forms",
+        "LLM APIs"
+      ]
+    },
+    {
+      "role": "AI Developer (equity-based)",
+      "time": "Nov 2025 – Present",
+      "location": "Cape Town",
+      "orgPublicLabel": "Early-stage startup (NDA; details limited)",
+      "highlights": [
+        "Shipped an end-to-end RAG pipeline and demo application.",
+        "Owned ingestion → embedding → indexing → retrieval → response behavior.",
+        "Improved CI/CD and dependency management for repeatable builds."
+      ],
+      "stack": [
+        "Python",
+        "RAG",
+        "FAISS",
+        "sentence-transformers",
+        "Streamlit",
+        "CI/CD"
+      ]
+    },
+    {
+      "role": "Junior ML & Embedded Systems Engineer",
+      "time": "Dec 2025 – Present",
+      "location": "Cape Town",
+      "orgPublicLabel": "Edge-AI mobility startup (NDA; details limited)",
+      "highlights": [
+        "Building sensor fusion pipelines and edge constraints into system design.",
+        "Contributing to firmware and data pipeline decisions for LiDAR/IMU/camera integration."
+      ],
+      "stack": [
+        "Embedded",
+        "Sensor fusion",
+        "Edge AI",
+        "STM32"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "ocr-document-automation",
+      "title": "OCR Document Automation",
+      "publicSummary": "Production OCR + mapping pipeline that converts scanned documents into structured outputs.",
+      "proof": {
+        "outcome": "100% field-mapping accuracy on the target document set.",
+        "constraints": "Noisy scans and layout variance; strict correctness requirements.",
+        "approach": "OCR extraction plus context-aware mapping with deterministic fallbacks where needed.",
+        "reliability": "Multi-layer validation, confidence scoring, audit logs, and fallbacks.",
+        "stack": [
+          "Python",
+          "OpenCV",
+          "OCR",
+          "PDF forms",
+          "LLM APIs"
+        ]
+      },
+      "links": {
+        "repo": null,
+        "demo": null,
+        "writeup": null
+      }
+    },
+    {
+      "id": "rag-assistant",
+      "title": "RAG Assistant",
+      "publicSummary": "Retrieval system that grounds answers in indexed content with a repeatable pipeline.",
+      "proof": {
+        "outcome": "Working end-to-end pipeline with persistent indexing and a usable demo.",
+        "constraints": "Retrieval quality and safety when sources are weak; repeatability.",
+        "approach": "Chunking/embedding → FAISS index → top-k retrieval → constrained generation.",
+        "reliability": "Deterministic indexing, guardrails, and no-answer behavior when retrieval is insufficient.",
+        "stack": [
+          "Python",
+          "FAISS",
+          "sentence-transformers",
+          "LLM APIs",
+          "Streamlit"
+        ]
+      },
+      "links": {
+        "repo": null,
+        "demo": null,
+        "writeup": null
+      }
+    },
+    {
+      "id": "embedded-edge-foundations",
+      "title": "Embedded / Edge AI Foundations",
+      "publicSummary": "Real-time sensing foundations for edge deployment with reliability under constraints.",
+      "proof": {
+        "outcome": "Contributed to firmware/data architecture decisions for reliable sensor timing and downstream consumption.",
+        "constraints": "Latency, limited compute, noisy sensor inputs.",
+        "approach": "Sensor fusion pipeline design and integration planning.",
+        "reliability": "Timing discipline, signal integrity checks, and incremental testing.",
+        "stack": [
+          "Embedded",
+          "C/C++",
+          "STM32",
+          "Sensor fusion"
+        ]
+      },
+      "links": {
+        "repo": null,
+        "demo": null,
+        "writeup": null
+      }
+    },
+    {
+      "id": "confidential-product-build",
+      "title": "Confidential AI Product Build (NDA)",
+      "publicSummary": "Ongoing work on an AI-driven product; details limited by NDA.",
+      "proof": {
+        "outcome": "Delivery on product foundations and production readiness.",
+        "constraints": "Confidentiality, evolving requirements, tight iteration cycles.",
+        "approach": "Architecture, backend integration, and safe feature delivery.",
+        "reliability": "CI/CD hygiene, dependency controls, and guardrails.",
+        "stack": [
+          "Architecture",
+          "Backend",
+          "LLMs",
+          "CI/CD"
+        ]
+      },
+      "links": {
+        "repo": null,
+        "demo": null,
+        "writeup": null
+      }
+    }
+  ],
+  "skills": {
+    "ai_ml": [
+      "Computer Vision",
+      "OCR",
+      "RAG",
+      "FAISS",
+      "Embeddings",
+      "Model integration",
+      "LLM APIs"
+    ],
+    "backend_data": [
+      "Python",
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "SQL/MySQL",
+      "Pandas",
+      "NumPy"
+    ],
+    "systems_shipping": [
+      "Git",
+      "Docker",
+      "CI/CD",
+      "Linux",
+      "Testing",
+      "Logging/observability"
+    ]
+  },
+  "faqs": [
+    {
+      "q": "What roles is Matome looking for?",
+      "a": "Software engineering, AI/ML engineering, and backend/cloud roles. Open to hybrid or remote; based in Cape Town."
+    },
+    {
+      "q": "What is Matome strongest at?",
+      "a": "Shipping reliable AI systems end-to-end—OCR/CV pipelines and retrieval systems (RAG) with validation, logging, fallbacks, and production-minded delivery."
+    },
+    {
+      "q": "Can you summarize the OCR work?",
+      "a": "It’s a production OCR workflow that converts scanned documents into structured outputs, with multi-layer validation, confidence scoring, and audit logs. Outcome: 100% field-mapping accuracy on the target document set."
+    },
+    {
+      "q": "Can you summarize the RAG work?",
+      "a": "An end-to-end retrieval pipeline: ingestion → embeddings → persistent FAISS index → retrieval → constrained generation, with guardrails and no-answer behavior when retrieval is insufficient."
+    },
+    {
+      "q": "Can Matome share NDA details?",
+      "a": "No. He can discuss the problem space, his role, and the engineering approach at a high level, but not identifying details or confidential artifacts."
+    },
+    {
+      "q": "Is Matome open to interviews?",
+      "a": "Yes—reach out via email for fastest response."
+    },
+    {
+      "q": "Can you confirm degree completion?",
+      "a": "This site does not confirm degree completion. It does list University of Cape Town CS/CE coursework and Matome’s production experience. For specific confirmations, please email Matome."
+    },
+    {
+      "q": "Where can I see public code?",
+      "a": "GitHub is the best place to start. NDA work is not shareable."
+    },
+    {
+      "q": "What certifications does Matome have?",
+      "a": "Google Cloud skill badge: Multimodal RAG (Gemini). See Credly for details."
+    },
+    {
+      "q": "What is Matome’s working style?",
+      "a": "Clear requirements, strong validation, simple systems that fail safely, and shipping in small iterations with tests and logging where they matter."
+    }
+  ]
+}
+
