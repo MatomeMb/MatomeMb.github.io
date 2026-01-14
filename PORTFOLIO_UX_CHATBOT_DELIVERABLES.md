@@ -10,7 +10,7 @@ This document provides **implementable**, public-safe UX + content + chatbot spe
   - Gaps: missing **Certifications** section (Credly is buried), missing **Experience → “proof artifacts”** (what shipped / how validated), and **Projects** are not consistently structured as case studies.
   - Navigation order does not match recruiter scan priorities (projects/case studies should be easier to reach from hero).
 - **Risks**
-  - Education line reads as degree completion (“BSc …”), which violates the constraint to **not claim completion**.
+  - Education wording can read as degree completion; the site must use **neutral education phrasing only** (no dates/status).
   - Company/client naming appears in “Experience” and “NDA” project; constraint requires NDA work to be **discreet** (no company names / contract details).
 
 ### Visual hierarchy & typography
@@ -81,7 +81,7 @@ This document provides **implementable**, public-safe UX + content + chatbot spe
   - Any language implying degree completion.
   - NDA details: company names, contract scope, internal datasets, internal metrics, internal docs.
 - **Current page risks**
-  - Education line “BSc …” reads as a completed degree.
+  - Education wording can read as degree completion if not kept neutral.
   - Named organizations in experience may be NDA-adjacent; the “NDA” card is already labeled but still includes implementation hints that can be tightened.
   - Phone number is displayed and linkable (spam/harassment risk).
 
@@ -91,10 +91,10 @@ This document provides **implementable**, public-safe UX + content + chatbot spe
 
 ### P0 — Must-fix now (blocking credibility/UX)
 1) **Education wording: remove degree completion implication**
-   - **What**: Replace “BSc … — University of Cape Town” with neutral phrasing: “University of Cape Town (Computer Science & Computer Engineering)”.
+   - **What**: Use neutral phrasing only: “University of Cape Town (Computer Science & Computer Engineering)”.
    - **Why**: Constraint: do not claim degree completion; avoid misrepresentation risk.
    - **Acceptance criteria**:
-     - No instances of “BSc”, “graduated”, “completed”, “class of”, dates/status.
+     - No degree completion claims, and no dates/status.
      - Education appears as a single neutral line in About (and optionally footer).
 
 2) **Discreet NDA handling: remove company names and overly specific vendor references**
