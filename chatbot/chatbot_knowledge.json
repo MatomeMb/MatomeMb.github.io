@@ -100,6 +100,7 @@
         "reliability": "Multi-layer checks, fallbacks, and audit logging for traceability.",
         "stack": ["Python", "OpenCV", "OCR tooling", "PDF/structured outputs", "LLM APIs (as needed)"],
         "links": [
+          { "label": "Case study", "url": "https://matomemb.github.io/case-studies/ocr-document-automation.html" },
           { "label": "GitHub (selected work)", "url": "https://github.com/MatomeMb" }
         ]
       }
@@ -113,6 +114,7 @@
         "reliability": "Reproducible indexing, retrieval gating when evidence is weak, and operational safeguards.",
         "stack": ["Python", "FAISS", "sentence-transformers", "UI demo tooling"],
         "links": [
+          { "label": "Case study", "url": "https://matomemb.github.io/case-studies/rag-assistant.html" },
           { "label": "Repo", "url": "https://github.com/MatomeMb/personal-codex-agent" }
         ]
       }
