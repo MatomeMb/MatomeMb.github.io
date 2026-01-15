@@ -60,6 +60,32 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+---
+
+## Firebase Hosting (deploy this site to your own domain)
+
+This repo is ready to deploy to Firebase Hosting using the root `firebase.json`.
+
+### 1. Install Firebase CLI
+```bash
+npm i -g firebase-tools
+```
+
+### 2. Login and select the project
+```bash
+firebase login
+firebase use matome-portfolio
+```
+
+### 3. Deploy
+```bash
+firebase deploy --only hosting
+```
+
+### Notes
+- If `resume.pdf` is missing, the Resume page will still load, but the PDF download link won’t work until `resume.pdf` exists in the repo root.
+- On Blaze (pay-as-you-go), set a Billing budget + alerts to avoid unexpected charges.
+
 ### 3. Customize Files
 Replace these files with your own:
 - **`profile.jpg`** - Your profile photo (recommended: 400x400px, .jpg or .png)
