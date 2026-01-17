@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://matomemb.github.io/sitemap.xml
+Sitemap: https://matomembowene.co.za/sitemap.xml
