@@ -595,6 +595,60 @@
 
         .btn-tertiary:hover { background: rgba(148,163,184,0.10); border-color: rgba(148,163,184,0.34); }
 
+        .cta-group {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-meta {
+            display: flex;
+            gap: 0.6rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .cta-meta a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .cta-meta a:hover {
+            color: var(--text);
+        }
+
+        .proof-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            max-width: 980px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .proof-item {
+            padding: 0.85rem 1rem;
+            border-radius: 14px;
+            border: 1px solid rgba(148,163,184,0.18);
+            background: rgba(148,163,184,0.08);
+            text-align: left;
+        }
+
+        .proof-value {
+            color: var(--text);
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .proof-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.35rem;
+        }
+
         .kpi-grid {
             display: flex;
             gap: 2rem;
@@ -887,55 +941,41 @@
                 <p class="muted" style="margin-bottom: 1.5rem; line-height: var(--lh-body); max-width: 60ch; margin-left: auto; margin-right: auto;">
                     I build production-focused AI features that ship: document automation, retrieval pipelines, and services, measured, validated, and designed for reliability.
                 </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-                    <a class="btn btn-primary" href="#contact">Contact</a>
-                    <a class="btn btn-secondary" href="#projects">Case studies</a>
-                    <a class="btn btn-tertiary" href="resume.html">Resume</a>
+                <div class="cta-group" aria-label="Primary actions">
+                    <a class="btn btn-primary" href="mailto:matomepontso@gmail.com">Email</a>
+                    <a class="btn btn-secondary" href="https://linkedin.com/in/matomembowene" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="btn btn-secondary" href="resume.pdf">Resume PDF</a>
+                    <a class="btn btn-secondary" href="https://github.com/MatomeMb" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
 
-                <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <a rel="me" href="mailto:matomepontso@gmail.com" style="color: var(--text-muted); text-decoration: none;">Email</a>
+                <div class="cta-meta" aria-label="Secondary actions">
+                    <a href="#projects">Case studies</a>
                     <span style="color: rgba(136,146,176,0.5);">•</span>
-                    <a rel="me noopener noreferrer" href="https://linkedin.com/in/matomembowene" target="_blank" style="color: var(--text-muted); text-decoration: none;">LinkedIn</a>
+                    <a href="resume.html">Resume page</a>
                     <span style="color: rgba(136,146,176,0.5);">•</span>
-                    <a rel="me noopener noreferrer" href="https://github.com/MatomeMb" target="_blank" style="color: var(--text-muted); text-decoration: none;">GitHub</a>
-                    <span style="color: rgba(136,146,176,0.5);">•</span>
-                    <a rel="me noopener noreferrer" href="https://www.credly.com/users/matome-mbowene" target="_blank" style="color: var(--text-muted); text-decoration: none;">Credly</a>
-                    <span style="color: rgba(136,146,176,0.5);">•</span>
-                    <a rel="me noopener noreferrer" href="mailto:matomepontso@gmail.com" style="color: var(--text-muted); text-decoration: none;">matomepontso@gmail.com</a>
+                    <a href="https://www.credly.com/users/matome-mbowene" target="_blank" rel="noopener noreferrer">Credly</a>
                 </div>
 
-                <div class="card" style="max-width: 980px; margin: 0 auto 1.25rem; padding: 1.1rem;">
-                    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
-                        <strong style="color: var(--text);">Proof</strong>
-                        <span class="muted" style="font-size:0.9rem;">Verifiable links</span>
+                <div class="proof-strip" aria-label="Proof highlights">
+                    <div class="proof-item">
+                        <div class="proof-value">100%</div>
+                        <div class="proof-label">OCR field-mapping accuracy</div>
                     </div>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top: 0.75rem;">
-                        <a class="repo-link" href="resume.html">Resume <span aria-hidden="true">↗</span></a>
-                        <a class="repo-link" href="case-studies/ocr-document-automation.html">OCR case study <span aria-hidden="true">↗</span></a>
-                        <a class="repo-link" href="case-studies/rag-assistant.html">RAG case study <span aria-hidden="true">↗</span></a>
-                        <a class="repo-link" href="https://www.credly.com/users/matome-mbowene" target="_blank" rel="noopener noreferrer">Credly <span aria-hidden="true">↗</span></a>
-                        <a class="repo-link" href="https://github.com/MatomeMb" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                    <div class="proof-item">
+                        <div class="proof-value">89.33%</div>
+                        <div class="proof-label">FashionMNIST model accuracy</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">35%</div>
+                        <div class="proof-label">Scheduling efficiency gain</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">Credly</div>
+                        <div class="proof-label">Google Cloud badge verified</div>
                     </div>
                 </div>
 
                 <p class="muted" style="margin-bottom: 0.5rem;">Based in Cape Town • Open to hybrid/remote roles</p>
-                
-                <!-- Quick Stats -->
-                <div class="kpi-grid">
-                    <div class="kpi">
-                        <div class="kpi-value" data-kpi="100" data-suffix="%">100%</div>
-                        <div class="kpi-label">OCR Field-Mapping Accuracy</div>
-                    </div>
-                    <div class="kpi">
-                        <div class="kpi-value" data-kpi="89.33" data-suffix="%">89.33%</div>
-                        <div class="kpi-label">Model Accuracy (FashionMNIST)</div>
-                    </div>
-                    <div class="kpi">
-                        <div class="kpi-value" data-kpi="35" data-suffix="%">35%</div>
-                        <div class="kpi-label">Scheduling Efficiency Gain</div>
-                    </div>
-                </div>
 
                 <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; margin-top: 1.25rem;">
                     <a class="repo-link" href="https://github.com/MatomeMb/personal-codex-agent" target="_blank" rel="noopener noreferrer">RAG repo <span aria-hidden="true">↗</span></a>
@@ -1744,6 +1784,9 @@
         <section id="contact" class="section">
             <div style="max-width: 600px; margin: 0 auto;">
                 <h2 style="text-align: center; margin-bottom: 3rem; color: var(--text);">Get In Touch</h2>
+                <p class="muted" style="text-align: center; margin: -2rem auto 2rem; line-height: var(--lh-body);">
+                    Best contact routes: email or LinkedIn. Resume PDF and GitHub are below.
+                </p>
                 
                 <div class="card" style="padding: 2rem;">
                     <!-- Simple Contact Info -->
@@ -1773,6 +1816,19 @@
                             </a>
                             <div style="color: var(--text-muted);">LinkedIn</div>
                             <a class="contact-link" href="https://linkedin.com/in/matomembowene" target="_blank" rel="noopener noreferrer">linkedin.com/in/matomembowene <span aria-hidden="true">↗</span></a>
+                        </div>
+                        <div style="text-align: center;">
+                            <a class="contact-iconLink" href="resume.pdf" aria-label="Download resume PDF">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 3h7l3 3v15H7V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M14 3v4h4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M12 12v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M9 15l3 3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span class="sr-only">Resume PDF</span>
+                            </a>
+                            <div style="color: var(--text-muted);">Resume PDF</div>
+                            <a class="contact-link" href="resume.pdf">Download resume.pdf</a>
                         </div>
                         <div style="text-align: center;">
                             <a class="contact-iconLink" href="https://github.com/MatomeMb" target="_blank" rel="noopener noreferrer" aria-label="Open Matome’s GitHub profile">
@@ -2225,7 +2281,7 @@
     "github": "https://github.com/MatomeMb",
     "linkedin": "https://linkedin.com/in/matomembowene",
     "credly": "https://www.credly.com/users/matome-mbowene",
-    "resume": "https://www.matomembowene.co.za/resume.html"
+    "resume": "https://www.matomembowene.co.za/resume.pdf"
   },
   "education": {
     "approvedLine": "University of Cape Town (Computer Science & Computer Engineering)"
@@ -2393,7 +2449,7 @@
     { "id": "rag", "q": "Does Matome have RAG experience?", "a": "Yes. Work includes ingestion \u2192 embeddings \u2192 persistent index \u2192 retrieval \u2192 response generation, with guardrails and conservative behavior when evidence is weak." },
     { "id": "certs", "q": "What certifications or credentials are publicly verifiable?", "a": "Google Cloud badge(s) via Credly (see Credly link). Dell Young Leaders and Google Cloud Career Launchpad (EMEA) are listed as credentials." },
     { "id": "contact", "q": "How do I contact Matome?", "a": "Email or LinkedIn are best. Email: matomepontso@gmail.com. LinkedIn: linkedin.com/in/matomembowene." },
-    { "id": "resume", "q": "Where can I view Matome\u2019s resume?", "a": "You can view a public-safe, print-friendly resume at https://www.matomembowene.co.za/resume.html (use \u201cPrint / Save as PDF\u201d for a PDF copy)." },
+    { "id": "resume", "q": "Where can I view Matome\u2019s resume?", "a": "You can download the resume PDF at https://www.matomembowene.co.za/resume.pdf and view the resume page at https://www.matomembowene.co.za/resume.html." },
     { "id": "nda", "q": "Can you share details about confidential/NDA work?", "a": "Only at a high level. I can discuss engineering approach and outcomes, but not client names, internal documents, or confidential implementation details." }
   ]
 }
