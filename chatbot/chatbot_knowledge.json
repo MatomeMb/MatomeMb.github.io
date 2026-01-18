@@ -17,7 +17,7 @@
     "github": "https://github.com/MatomeMb",
     "linkedin": "https://linkedin.com/in/matomembowene",
     "credly": "https://www.credly.com/users/matome-mbowene",
-    "resume": "https://www.matomembowene.co.za/resume.html"
+    "resume": "https://www.matomembowene.co.za/resume.pdf"
   },
   "education": {
     "approvedLine": "University of Cape Town (Computer Science & Computer Engineering)"
@@ -230,7 +230,7 @@
     {
       "id": "resume",
       "q": "Where can I view Matome’s resume?",
-      "a": "You can view a public-safe, print-friendly resume at https://www.matomembowene.co.za/resume.html (use “Print / Save as PDF” for a PDF copy)."
+      "a": "You can download the resume PDF at https://www.matomembowene.co.za/resume.pdf and view the resume page at https://www.matomembowene.co.za/resume.html."
     },
     {
       "id": "nda",

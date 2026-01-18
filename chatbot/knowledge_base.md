@@ -15,7 +15,8 @@ Matome builds production-focused AI features that hold up in real deployments: i
 - **GitHub**: https://github.com/MatomeMb
 - **LinkedIn**: https://linkedin.com/in/matomembowene
 - **Credly**: https://www.credly.com/users/matome-mbowene
-- **Resume**: available upon request (email preferred)
+- **Resume (PDF)**: https://www.matomembowene.co.za/resume.pdf
+- **Resume (page)**: https://www.matomembowene.co.za/resume.html
 
 ## Education (approved phrasing only)
 - University of Cape Town (Computer Science & Computer Engineering)
