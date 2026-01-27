@@ -956,98 +956,6 @@
             .hero::before, .hero::after { animation: none !important; }
         }
 
-        /* Offline assistant (static chat) */
-        .assistant-toggle {
-            position: fixed;
-            right: 1rem;
-            bottom: 1rem;
-            z-index: 1500;
-            border: 1px solid rgba(148,163,184,0.22);
-            background: rgba(18,20,26,0.92);
-            backdrop-filter: blur(10px);
-            color: var(--text);
-            border-radius: 999px;
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            font-weight: 700;
-            box-shadow: 0 12px 30px var(--shadow);
-        }
-
-        .assistant-panel {
-            position: fixed;
-            right: 1rem;
-            bottom: 4.75rem;
-            width: min(420px, calc(100vw - 2rem));
-            max-height: min(520px, calc(100vh - 7rem));
-            z-index: 1500;
-            display: none;
-            flex-direction: column;
-            background: rgba(18,20,26,0.96);
-            border: 1px solid rgba(148,163,184,0.18);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 18px 60px rgba(0,0,0,0.45);
-        }
-
-        .assistant-panel.open { display: flex; }
-
-        .assistant-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0.9rem 1rem;
-            border-bottom: 1px solid rgba(148,163,184,0.18);
-        }
-
-        .assistant-body {
-            padding: 0.9rem 1rem;
-            overflow: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .assistant-msg {
-            border: 1px solid rgba(148,163,184,0.18);
-            background: rgba(255,255,255,0.04);
-            border-radius: 12px;
-            padding: 0.65rem 0.75rem;
-            line-height: 1.55;
-        }
-
-        .assistant-msg.user {
-            border-color: rgba(99,102,241,0.22);
-            background: rgba(99,102,241,0.10);
-            align-self: flex-end;
-        }
-
-        .assistant-footer {
-            padding: 0.9rem 1rem;
-            border-top: 1px solid rgba(148,163,184,0.18);
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .assistant-input {
-            flex: 1;
-            padding: 0.65rem 0.75rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(148,163,184,0.22);
-            border-radius: 10px;
-            color: var(--text);
-        }
-
-        .assistant-send {
-            padding: 0.65rem 0.9rem;
-            border-radius: 10px;
-            border: 1px solid rgba(148,163,184,0.24);
-            background: rgba(148,163,184,0.10);
-            color: var(--text);
-            font-weight: 700;
-            cursor: pointer;
-        }
-        
         @media (max-width: 768px) {
             h1 { font-size: 1.9rem; }
             .hero { padding: 5rem 1rem 1rem; min-height: auto; }
@@ -1074,6 +982,44 @@
                 width: 120px !important;
                 height: 120px !important;
             }
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 3.75rem 1rem 1.25rem; }
+            h1 { font-size: 1.7rem; }
+            img[src="profile.jpg"] {
+                width: 110px !important;
+                height: 110px !important;
+                margin-bottom: 1.25rem !important;
+            }
+            .pill-row { gap: 0.4rem; margin: 0.6rem 0 1rem; }
+            .pill {
+                font-size: 0.82rem;
+                padding: 0.3rem 0.55rem;
+                white-space: normal;
+                text-align: center;
+                line-height: 1.2;
+                max-width: 100%;
+            }
+            .cta-group { gap: 0.5rem; margin-bottom: 1.1rem; }
+            .cta-group .btn { padding: 0.6rem 1.1rem; font-size: 0.95rem; }
+            .cta-meta { gap: 0.45rem; margin-bottom: 1rem; font-size: 0.88rem; }
+            .proof-strip {
+                grid-template-columns: repeat(2, minmax(140px, 1fr));
+                gap: 0.6rem;
+                margin-bottom: 1rem;
+            }
+            .proof-item { padding: 0.6rem 0.75rem; }
+            .proof-value { font-size: 1rem; }
+            .proof-label { font-size: 0.8rem; }
+        }
+
+        @media (max-width: 420px) {
+            img[src="profile.jpg"] {
+                width: 96px !important;
+                height: 96px !important;
+            }
+            .proof-strip { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -2076,31 +2022,6 @@
         </footer>
     </main>
 
-    <!-- Offline portfolio assistant (no external requests) -->
-    <button id="assistantToggle" class="assistant-toggle" type="button" aria-expanded="false" aria-controls="assistantPanel">
-        Ask about my work
-    </button>
-
-    <section id="assistantPanel" class="assistant-panel" role="dialog" aria-modal="false" aria-label="Offline portfolio assistant">
-        <div class="assistant-header">
-            <div>
-                <div style="font-weight: 800;">Portfolio assistant</div>
-                <div class="muted" style="font-size: 0.9rem;">Runs locally in your browser (no API calls).</div>
-            </div>
-            <button id="assistantClose" type="button" class="btn btn-tertiary" style="padding: 0.45rem 0.7rem;">Close</button>
-        </div>
-        <div id="assistantBody" class="assistant-body">
-            <div class="assistant-msg">
-                Ask me about projects (OCR, RAG, embedded), skills, or how to contact Matome.
-            </div>
-        </div>
-        <div class="assistant-footer">
-            <label for="assistantInput" class="sr-only">Message</label>
-            <input id="assistantInput" class="assistant-input" type="text" autocomplete="off" placeholder="Type a question… (e.g., “Tell me about RAG”)">
-            <button id="assistantSend" class="assistant-send" type="button">Send</button>
-        </div>
-    </section>
-
     <!-- Minimal JavaScript -->
     <script>
         // Show content immediately
@@ -2407,61 +2328,6 @@
             }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
 
             unique.forEach(el => ro.observe(el));
-        })();
-
-        // Offline assistant (keyword-based helper)
-        (function () {
-            const toggle = document.getElementById('assistantToggle');
-            const panel = document.getElementById('assistantPanel');
-            const close = document.getElementById('assistantClose');
-            const body = document.getElementById('assistantBody');
-            const input = document.getElementById('assistantInput');
-            const send = document.getElementById('assistantSend');
-            if (!toggle || !panel || !close || !body || !input || !send) return;
-
-            const responses = [
-                { keys: ['contact', 'email', 'reach'], text: 'You can reach Matome via email (preferred) or LinkedIn. Use the Contact section for one-click links.' },
-                { keys: ['rag', 'retrieval', 'faiss', 'vector'], text: 'RAG work: ingestion → embeddings → persistent index → retrieval → generation, with guardrails when retrieval is weak and reproducible indexing.' },
-                { keys: ['ocr', 'document', 'pdf', 'forms'], text: 'OCR automation: reliability-first extraction with multi-layer validation, confidence scoring, and editable PDF form outputs (AcroFields) with audit logging.' },
-                { keys: ['embedded', 'stm32', 'sensor', 'lidar', 'imu'], text: 'Embedded/edge work: sensor fusion pipelines and latency-aware integration, with an emphasis on timing integrity and fault-tolerant interfaces.' },
-                { keys: ['skills', 'stack', 'tech'], text: 'Core stack: Python, Java, C/C++, CV/OCR, RAG (FAISS + embeddings), REST APIs, SQL, CI/CD, Linux, testing.' },
-                { keys: ['projects', 'portfolio'], text: 'Browse the Projects section and use the filters (AI/ML, Backend/Web, Systems, Embedded, NDA) to quickly narrow to what you care about.' }
-            ];
-
-            function addMsg(text, isUser) {
-                const div = document.createElement('div');
-                div.className = 'assistant-msg' + (isUser ? ' user' : '');
-                div.textContent = text;
-                body.appendChild(div);
-                body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
-            }
-
-            function answer(q) {
-                const query = (q || '').toLowerCase();
-                const hit = responses.find(r => r.keys.some(k => query.includes(k)));
-                return hit ? hit.text : 'Try asking about “OCR”, “RAG”, “embedded”, “skills”, or “contact”.';
-            }
-
-            function setOpen(isOpen) {
-                panel.classList.toggle('open', isOpen);
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                if (isOpen) setTimeout(() => input.focus(), 50);
-            }
-
-            toggle.addEventListener('click', () => setOpen(!panel.classList.contains('open')));
-            close.addEventListener('click', () => setOpen(false));
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
-
-            function handleSend() {
-                const q = input.value.trim();
-                if (!q) return;
-                input.value = '';
-                addMsg(q, true);
-                addMsg(answer(q), false);
-            }
-
-            send.addEventListener('click', handleSend);
-            input.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleSend(); });
         })();
 
         // Copy email (simple trust/UX enhancement)
