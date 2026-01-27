@@ -2,8 +2,8 @@
    Goals: faster repeat visits + basic offline resilience + stale-while-revalidate.
    No analytics, no logging. */
 
-const CACHE_NAME = 'mm-portfolio-v2';
-const STATIC_CACHE = 'mm-portfolio-static-v2';
+const CACHE_NAME = 'mm-portfolio-v3';
+const STATIC_CACHE = 'mm-portfolio-static-v3';
 
 const CORE_ASSETS = [
   '/',

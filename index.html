@@ -460,7 +460,15 @@
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
             font-size: 0.85rem;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .tag img {
+            width: 14px;
+            height: 14px;
+            display: block;
         }
 
         .sr-only {
@@ -511,6 +519,8 @@
         .tool-logo img { display: block; }
 
         .logo-mono { filter: invert(1) brightness(1.05); }
+
+        :root[data-theme="light"] .logo-mono { filter: none; }
 
         .tool-logo[data-brand="accent"] {
             color: var(--accent);
@@ -570,6 +580,12 @@
         }
 
         .repo-link:visited { color: var(--text); }
+
+        .project-icon img {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
 
         .repo-card {
             text-decoration: none;
@@ -1156,11 +1172,11 @@
                             <li>Created editable PDF form fields (AcroFields), robust fallbacks, and enterprise-grade logging.</li>
                         </ul>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-                            <span class="tag">Python</span>
-                            <span class="tag">OpenCV</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true" loading="lazy">Python</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="" aria-hidden="true" loading="lazy">OpenCV</span>
                             <span class="tag">OCR</span>
-                            <span class="tag">PDF Forms</span>
-                            <span class="tag">LLM APIs</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobeacrobatreader.svg" alt="" aria-hidden="true" loading="lazy">PDF Forms</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="" aria-hidden="true" loading="lazy">LLM APIs</span>
                         </div>
                     </div>
 
@@ -1177,10 +1193,10 @@
                         </ul>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
                             <span class="tag">RAG</span>
-                            <span class="tag">FAISS</span>
-                            <span class="tag">sentence-transformers</span>
-                            <span class="tag">Streamlit</span>
-                            <span class="tag">CI/CD</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/meta.svg" alt="" aria-hidden="true" loading="lazy">FAISS</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/huggingface.svg" alt="" aria-hidden="true" loading="lazy">sentence-transformers</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" alt="" aria-hidden="true" loading="lazy">Streamlit</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="" aria-hidden="true" loading="lazy">CI/CD</span>
                         </div>
                     </div>
 
@@ -1198,7 +1214,7 @@
                             <span class="tag">Embedded</span>
                             <span class="tag">Sensor Fusion</span>
                             <span class="tag">Edge AI</span>
-                            <span class="tag">STM32</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stmicroelectronics.svg" alt="" aria-hidden="true" loading="lazy">STM32</span>
                         </div>
                     </div>
 
@@ -1324,28 +1340,38 @@
                         <h3 style="color: var(--text); margin-bottom: 0.5rem;">AI / ML Systems</h3>
                         <p class="muted" style="line-height: 1.7;">Computer vision, document automation, RAG pipelines, evaluation, and safe deployment patterns.</p>
                         <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem;">
-                            <span class="tag">CV</span><span class="tag">OCR</span><span class="tag">RAG</span><span class="tag">PyTorch</span>
+                            <span class="tag">CV</span>
+                            <span class="tag">OCR</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" aria-hidden="true" loading="lazy">PyTorch</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3 style="color: var(--text); margin-bottom: 0.5rem;">Backend / Web</h3>
                         <p class="muted" style="line-height: 1.7;">APIs, data modeling, and systems that prioritize correctness, observability, and maintainability.</p>
                         <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem;">
-                            <span class="tag">REST</span><span class="tag">Spring Boot</span><span class="tag">SQL</span><span class="tag">Testing</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openapi/openapi-original.svg" alt="" aria-hidden="true" loading="lazy">REST</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="" aria-hidden="true" loading="lazy">Spring Boot</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" aria-hidden="true" loading="lazy">MySQL</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/testinglibrary.svg" alt="" aria-hidden="true" loading="lazy">Testing</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3 style="color: var(--text); margin-bottom: 0.5rem;">Embedded / Edge</h3>
                         <p class="muted" style="line-height: 1.7;">Latency-aware pipelines and hardware integration with an emphasis on signal integrity and robustness.</p>
                         <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem;">
-                            <span class="tag">STM32</span><span class="tag">Sensor Fusion</span><span class="tag">C/C++</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stmicroelectronics.svg" alt="" aria-hidden="true" loading="lazy">STM32</span>
+                            <span class="tag">Sensor Fusion</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="" aria-hidden="true" loading="lazy">C/C++</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3 style="color: var(--text); margin-bottom: 0.5rem;">Systems / Fundamentals</h3>
                         <p class="muted" style="line-height: 1.7;">Algorithms, networking, and performance tradeoffs, useful when reliability and efficiency matter.</p>
                         <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem;">
-                            <span class="tag">Networking</span><span class="tag">Scheduling</span><span class="tag">Performance</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Scheduling</span>
+                            <span class="tag">Performance</span>
                         </div>
                     </div>
                 </div>
@@ -1404,12 +1430,8 @@
                     <!-- Project 1 -->
                     <div class="card project-card" data-category="ai-ml">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <div style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 3h7l3 3v15H7V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                    <path d="M14 3v4h4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                    <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
+                            <div class="project-icon" style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="" aria-hidden="true" loading="lazy">
                             </div>
                             <h3 style="color: var(--text);">OCR Document Automation</h3>
                         </div>
@@ -1419,9 +1441,9 @@
                             <a class="repo-link" href="case-studies/ocr-document-automation.html" aria-label="Open OCR Document Automation case study">Case study <span aria-hidden="true">↗</span></a>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span class="tag">Python</span>
-                            <span class="tag">OpenCV</span>
-                            <span class="tag">LLMs</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true" loading="lazy">Python</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="" aria-hidden="true" loading="lazy">OpenCV</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="" aria-hidden="true" loading="lazy">LLMs</span>
                         </div>
                         <ul class="list">
                             <li><strong style="color: var(--text);">Outcome:</strong> 100% field-mapping accuracy with multi-layer validation.</li>
@@ -1444,14 +1466,8 @@
                     <!-- Project 2 -->
                     <div class="card project-card" data-category="ai-ml">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <div style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 3h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M12 3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M7 8h10a3 3 0 0 1 3 3v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-6a3 3 0 0 1 3-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                    <path d="M9 13h.01M15 13h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                                    <path d="M9 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
+                            <div class="project-icon" style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
+                                <img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="" aria-hidden="true" loading="lazy">
                             </div>
                             <h3 style="color: var(--text);">RAG AI Assistant</h3>
                         </div>
@@ -1461,9 +1477,9 @@
                             <a class="repo-link" href="case-studies/rag-assistant.html" aria-label="Open RAG Assistant case study">Case study <span aria-hidden="true">↗</span></a>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span class="tag">Python</span>
-                            <span class="tag">FAISS</span>
-                            <span class="tag">Streamlit</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true" loading="lazy">Python</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/meta.svg" alt="" aria-hidden="true" loading="lazy">FAISS</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg" alt="" aria-hidden="true" loading="lazy">Streamlit</span>
                         </div>
                         <ul class="list">
                             <li><strong style="color: var(--text);">Outcome:</strong> fast, relevant retrieval-backed answers for a focused knowledge base.</li>
@@ -1483,10 +1499,8 @@
                     <!-- Project 3 -->
                     <div class="card project-card" data-category="embedded">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <div style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M13 2 3 14h7l-1 8 12-14h-7l-1-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="project-icon" style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
+                                <img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stmicroelectronics.svg" alt="" aria-hidden="true" loading="lazy">
                             </div>
                             <h3 style="color: var(--text);">Embedded Navigation</h3>
                         </div>
@@ -1495,8 +1509,8 @@
                             <a class="repo-link" href="https://github.com/MatomeMb" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile (embedded repo may not be public)">GitHub profile <span aria-hidden="true">↗</span></a>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span class="tag">C++</span>
-                            <span class="tag">STM32</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="" aria-hidden="true" loading="lazy">C++</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stmicroelectronics.svg" alt="" aria-hidden="true" loading="lazy">STM32</span>
                             <span class="tag">Sensor Fusion</span>
                         </div>
                         <ul class="list">
@@ -1517,12 +1531,8 @@
                     <!-- Project 4 (Discreet NDA Work) -->
                     <div class="card project-card" data-category="nda">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <div style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M6 11h12v10H6V11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                    <path d="M12 15v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
+                            <div class="project-icon" style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
+                                <img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="" aria-hidden="true" loading="lazy">
                             </div>
                             <h3 style="color: var(--text);">Confidential AI Product Build (NDA)</h3>
                         </div>
@@ -1533,8 +1543,8 @@
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
                             <span class="tag">Architecture</span>
                             <span class="tag">Backend</span>
-                            <span class="tag">LLMs</span>
-                            <span class="tag">CI/CD</span>
+                            <span class="tag"><img class="logo-mono" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="" aria-hidden="true" loading="lazy">LLMs</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="" aria-hidden="true" loading="lazy">CI/CD</span>
                         </div>
                         <ul class="list">
                             <li><strong style="color: var(--text);">Outcome:</strong> production-ready AI product foundations and measurable delivery cadence.</li>
@@ -1548,12 +1558,8 @@
                     <!-- Project 5 -->
                     <div class="card project-card" data-category="ai-ml">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <div style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 4a3 3 0 0 0-3 3v1a2 2 0 0 0 0 4v1a3 3 0 0 0 3 3h1v-2H9a1 1 0 0 1-1-1v-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M15 4a3 3 0 0 1 3 3v1a2 2 0 0 1 0 4v1a3 3 0 0 1-3 3h-1v-2h1a1 1 0 0 0 1-1v-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M12 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
+                            <div class="project-icon" style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" aria-hidden="true" loading="lazy">
                             </div>
                             <h3 style="color: var(--text);">FashionMNIST Classifier</h3>
                         </div>
@@ -1562,7 +1568,7 @@
                             <a class="repo-link" href="https://github.com/MatomeMb/FashionMNIST-Classifier" target="_blank" rel="noopener noreferrer" aria-label="Open FashionMNIST-Classifier repository on GitHub">Open repo <span aria-hidden="true">↗</span></a>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span class="tag">PyTorch</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" aria-hidden="true" loading="lazy">PyTorch</span>
                             <span class="tag">CV</span>
                             <span class="tag">Evaluation</span>
                         </div>
@@ -1586,12 +1592,8 @@
                     <!-- Project 6 -->
                     <div class="card project-card" data-category="backend">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <div style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M12 3c2.5 2.8 3.8 6.2 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-6.2-3.8-9S9.5 5.8 12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="project-icon" style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="" aria-hidden="true" loading="lazy">
                             </div>
                             <h3 style="color: var(--text);">MyAdvisor (Full‑Stack Web App)</h3>
                         </div>
@@ -1600,9 +1602,9 @@
                             <a class="repo-link" href="https://github.com/MatomeMb" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile (MyAdvisor repo not public)">GitHub profile <span aria-hidden="true">↗</span></a>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span class="tag">Spring Boot</span>
-                            <span class="tag">REST</span>
-                            <span class="tag">MySQL</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="" aria-hidden="true" loading="lazy">Spring Boot</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openapi/openapi-original.svg" alt="" aria-hidden="true" loading="lazy">REST</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" aria-hidden="true" loading="lazy">MySQL</span>
                         </div>
                         <ul class="list">
                             <li><strong style="color: var(--text);">Outcome:</strong> improved workflow efficiency and clearer user journeys.</li>
@@ -1615,10 +1617,8 @@
                     <!-- Project 7 -->
                     <div class="card project-card" data-category="systems">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                            <div style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 3h6v4a2 2 0 1 1 2 2h4v6h-4a2 2 0 1 0-2 2v4H9v-4a2 2 0 1 0-2-2H3V9h4a2 2 0 1 1 2-2V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="project-icon" style="width: 40px; height: 40px; background: rgba(148,163,184,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text);" aria-hidden="true">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" aria-hidden="true" loading="lazy">
                             </div>
                             <h3 style="color: var(--text);">Scheduling & Networking Systems</h3>
                         </div>
@@ -1628,8 +1628,8 @@
                             <a class="repo-link" href="https://github.com/MatomeMb/number-range-summarizer" target="_blank" rel="noopener noreferrer" aria-label="Open number-range-summarizer repository on GitHub">Java repo <span aria-hidden="true">↗</span></a>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                            <span class="tag">Java</span>
-                            <span class="tag">Python</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" aria-hidden="true" loading="lazy">Java</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true" loading="lazy">Python</span>
                             <span class="tag">Systems</span>
                         </div>
                         <ul class="list">
@@ -1859,7 +1859,7 @@
                             <span class="tag">Computer Vision</span>
                             <span class="tag">RAG</span>
                             <span class="tag">Backend services</span>
-                            <span class="tag">CI/CD</span>
+                            <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="" aria-hidden="true" loading="lazy">CI/CD</span>
                             <span class="tag">Reliability</span>
                         </div>
                     </div>
